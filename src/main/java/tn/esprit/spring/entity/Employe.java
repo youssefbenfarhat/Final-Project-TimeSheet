@@ -23,7 +23,7 @@ public class Employe implements Serializable{
 		Role role;
 		@Id
 		@GeneratedValue (strategy = GenerationType.IDENTITY)
-//		@Column(name="EMPLOYE_ID")
+
 		private long id;
 		@Column(name="EMPLOYE_PRENOM")
 		private String prenom;
