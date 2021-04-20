@@ -2,8 +2,8 @@ package tn.esprit.spring.service;
 
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
+
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,9 +56,14 @@ public class EmployeServiceImpl implements EmployeService {
 		
 		Employe emp = null ;
 		try {
+			if (employeRepository.findById( id).isPresent())
+			{
+				
+			
 			 emp = employeRepository.findById( id).get();
 			l.info("Employe trouvé");
-			
+
+			}
 		}
 		catch (Exception e)
 		{
@@ -70,7 +75,7 @@ public class EmployeServiceImpl implements EmployeService {
 	}
 	
 	@Override
-	public List<Employe> RerieveAllEmployees () {
+	public List<Employe> rerieveAllEmployees () {
 		
 		List<Employe> employes=  null ;
 		
@@ -88,7 +93,7 @@ public class EmployeServiceImpl implements EmployeService {
 	}
 	
 	@Override
-	public void DeleteEmployee (long id) {
+	public void deleteEmployee (long id) {
 		
 		
 		
@@ -111,14 +116,15 @@ public class EmployeServiceImpl implements EmployeService {
 		}
 	}
 	@Override
-	public Employe UpdateEmployee (Employe emp) {
+	public Employe updateEmployee (Employe emp) {
 		
 		
 		
 		try {
 			
-			if (employeRepository.findById(emp.getId()).get()!=null)
+			if (employeRepository.findById(emp.getId()).isPresent())
 			{
+				emp=employeRepository.findById(emp.getId()).get();
 				employeRepository.save(emp);
 				l.info("emloye modifié ");
 				return emp ;

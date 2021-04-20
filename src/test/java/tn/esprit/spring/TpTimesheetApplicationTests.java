@@ -27,7 +27,7 @@ public class TpTimesheetApplicationTests {
 	
 	
 	@Test
-	public void testAjouterEmploye() throws ParseException, java.text.ParseException
+	public void testAjouterEmploye() throws ParseException
 	{
 		
 		
@@ -39,7 +39,7 @@ public class TpTimesheetApplicationTests {
 	
 
 	@Test
-	public void testGetEmploye() throws ParseException, java.text.ParseException
+	public void testGetEmploye() throws ParseException
 	{
 		
 		Employe employeadded =es.getEmploye(1);
@@ -48,28 +48,28 @@ public class TpTimesheetApplicationTests {
 	}
 	
 	@Test
-	public void testRerieveAllEmployees() throws ParseException, java.text.ParseException
+	public void testRerieveAllEmployees() throws ParseException
 	{
-		 List<Employe> emps =es.RerieveAllEmployees();
+		 List<Employe> emps =es.rerieveAllEmployees();
 		
 		assertEquals(3, emps.size());
 		
 	}
 	
 	@Test
-	public void testDeleteEmployee() throws ParseException, java.text.ParseException
+	public void testDeleteEmployee() throws ParseException
 	{
-		es.DeleteEmployee(8); 
+		es.deleteEmployee(8); 
 		
 		
 		
 	}
 	
 	@Test
-	public void testUpdateEmployee() throws ParseException, java.text.ParseException
+	public void testUpdateEmployee() throws ParseException
 	{
 		Employe e = new Employe(7,"Amine","Riahi ","amineop@gmail.com", Role.CHEF_DEPARTEMENT,  true) ;
-		Employe employeUpdated=es.UpdateEmployee(e); 
+		Employe employeUpdated=es.updateEmployee(e); 
 		assertEquals(e.getNom(), employeUpdated.getNom());
 		
 		

@@ -35,13 +35,13 @@ public class EntrepriseRestControlImpl {
 	
 	@PostMapping("/affecterDepartementAEntreprise/{depid}/{entrepriseid}")
 	@ResponseBody
-	void affecterDepartementAEntreprise(@PathVariable("depid") int depid, @PathVariable("entrepriseid") int entrepriseid) {
+	public void affecterDepartementAEntreprise(@PathVariable("depid") int depid, @PathVariable("entrepriseid") int entrepriseid) {
 		entrepriseService.affecterDepartementAEntreprise(depid, entrepriseid);
 	}
 	
 	@GetMapping("/retreiveAllDepartementNamesByEntreprise/{entrepriseid}")
 	@ResponseBody
-	List<String> getAllDepartementNamesByEntreprise(@PathVariable("entrepriseid")int entrepriseid) {
+	public List<String> getAllDepartementNamesByEntreprise(@PathVariable("entrepriseid")int entrepriseid) {
 		return entrepriseService.getAllDepartementNamesByEntreprise(entrepriseid);
 	}
 }

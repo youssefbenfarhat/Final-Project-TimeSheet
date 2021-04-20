@@ -143,7 +143,7 @@ public class Timesheet implements Serializable{
 	
 
 
-	public Timesheet(Mission mission, Employe employe, String timesheet,TimesheetPk timesheetPk) {
+	public Timesheet(Mission mission, Employe employe) {
 		super();
 		this.mission = mission;
 		this.employe = employe;

@@ -18,8 +18,8 @@ public interface EmployeService {
 	public long getNombreEmployeJPQL();
 	public List<String> getAllEmployeNamesJPQL();
 	Employe getEmploye(long id);
-	List<Employe> RerieveAllEmployees();
-	void DeleteEmployee(long id);
-	Employe UpdateEmployee(Employe emp);
+	List<Employe> rerieveAllEmployees();
+	void deleteEmployee(long id);
+	Employe updateEmployee(Employe emp);
 
 }

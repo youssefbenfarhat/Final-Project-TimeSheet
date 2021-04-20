@@ -23,12 +23,15 @@ public class EmployeRestControlImpl {
 	@Autowired
 	EmployeService employeService;
 	
-	 // Ajouter User : http://localhost:8081/SpringMVC/servlet/ajouterEmploye
-//	@PostMapping("/ajouterEmploye")
-//	@ResponseBody
-//	public int ajouterEmploye(@RequestBody Employe employe) {
-//		return employeService.ajouterEmploye(employe);
-//	}
+	  //Ajouter User : http://localhost:8081/SpringMVC/servlet/ajouterEmploye
+	@PostMapping("/ajouterEmploye")
+	@ResponseBody
+	public int ajouterEmploye(@RequestBody Employe employe) {
+		employeService.ajouterEmploye(employe) ; 
+		return  (int) employe.getId();
+	}
+		
+
 	
 	@PutMapping("/affecterEmployeADepartement/{employeid}/{depid}")
 	@ResponseBody

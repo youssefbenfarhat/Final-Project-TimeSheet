@@ -14,10 +14,7 @@ import javax.persistence.TemporalType;
 public class Contrat extends Employe implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-//	@Id
-//	@GeneratedValue (strategy = GenerationType.IDENTITY)
-//	@Column(name="CONTRAT_ID")
-//	private long id;
+
 	@Column(name="CONTRAT_REFERENCE")
 	private String reference;
 	
