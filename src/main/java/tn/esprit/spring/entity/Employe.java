@@ -41,7 +41,7 @@ public class Employe implements Serializable{
 		public Role getRole() {
 			return role;
 		}
-		//bonjour
+		//bonj
 		public void setRole(Role role) {
 			this.role = role;
 		}
